@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
+import random
 
 my_url = requests.get('https://escapefromtarkov.gamepedia.com/Weapons')
+# https://escapefromtarkov.gamepedia.com/Weapons
 # https://escapefromtarkov.gamepedia.com/Armor_vests
 # https://escapefromtarkov.gamepedia.com/Chest_rigs
 # https://escapefromtarkov.gamepedia.com/Eyewear
@@ -10,7 +12,7 @@ my_url = requests.get('https://escapefromtarkov.gamepedia.com/Weapons')
 # https://escapefromtarkov.gamepedia.com/Headsets
 # https://escapefromtarkov.gamepedia.com/Headwear
 # https://escapefromtarkov.gamepedia.com/Backpacks
-# https://escapefromtarkov.gamepedia.com/Armbads
+# https://escapefromtarkov.gamepedia.com/Armbands
 
 
 # Check if scraper will access website
@@ -36,14 +38,20 @@ for target in soup.findAll('tr'):
             weapons.append(string)
 
 # Printing final list, testing to make sure we end when we've gathere all current weapons.
-print('Final List:')       
+print('Final List:')   
+final_list = []    
 sleep(1)
+i = 0
 for weapon in weapons:
     if weapon.lower() == 'name':
         pass
     elif '9A-91/VSK-94' in weapon:
         break
+    elif 'Gear' in weapon:
+        break
     else:
+        final_list.append(weapon)
         print(weapon)
         sleep(.05)
-print('Last weapon above should be Zarya....')
+print(f'There are {len(final_list)} weapons so far.')
+print(f'Random weapon is {random.choice(final_list)}')
