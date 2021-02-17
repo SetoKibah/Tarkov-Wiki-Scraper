@@ -12,6 +12,12 @@ my_url = requests.get('https://escapefromtarkov.gamepedia.com/Weapons')
 # https://escapefromtarkov.gamepedia.com/Backpacks
 # https://escapefromtarkov.gamepedia.com/Armbads
 
+
+# Check if scraper will access website
+# Generate individual JSON lists for all items
+# Create logic for the random selection, including chances for nothing in each category.
+# Announce the game to the community
+
 # Save url content
 src = my_url.content
 
