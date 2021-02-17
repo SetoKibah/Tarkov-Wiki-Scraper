@@ -3,6 +3,14 @@ from bs4 import BeautifulSoup
 from time import sleep
 
 my_url = requests.get('https://escapefromtarkov.gamepedia.com/Weapons')
+# https://escapefromtarkov.gamepedia.com/Armor_vests
+# https://escapefromtarkov.gamepedia.com/Chest_rigs
+# https://escapefromtarkov.gamepedia.com/Eyewear
+# https://escapefromtarkov.gamepedia.com/Face_cover
+# https://escapefromtarkov.gamepedia.com/Headsets
+# https://escapefromtarkov.gamepedia.com/Headwear
+# https://escapefromtarkov.gamepedia.com/Backpacks
+# https://escapefromtarkov.gamepedia.com/Armbads
 
 # Save url content
 src = my_url.content
